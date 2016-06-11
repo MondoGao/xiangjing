@@ -255,22 +255,45 @@ a:visited {
   height: inherit;
   z-index: 2;
   .float-commit {
-    position: absolute;
     top: 0;
     right: 0;
     ul {
       list-style: none;
+      top: 0;
+      right: 0;
       li{
-        display: table-cell;
-        height: 100px;
-        width: 100px;
+        display: block;
+        position: absolute;
         border-radius: 999px;
         color: rgba(0,0,0,0.8);
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
+        right: 0;
         vertical-align: middle;
         overflow: hidden;
         transition: all .5s;
+        &:nth-child(1){
+          height: 100px;
+          width: 100px;
+        }
+        &:nth-child(2){
+          height: 50px;
+          width: 50px;
+          right: 100px;
+          top: 10px;
+        }
+        &:nth-child(3){
+          height: 80px;
+          width: 80px;
+          top: 80px;
+          right: 80px;
+        }
+        &:nth-child(4){
+          height: 20px;
+          width: 20px;
+          top: 110px;
+          right: 20px;
+        }
         &:hover{
           color: rgba(0,0,0,1);
           background-color: rgba(255, 255, 255, 1);
@@ -278,7 +301,7 @@ a:visited {
       }
     }
   }
-  .comment-form {
+  .comment-form, .exist-comment-form {
     position: absolute;
     top: 25%;
     left: 25%;
@@ -315,6 +338,23 @@ a:visited {
       outline: none;
       resize: none;
       color: rgba(255, 255, 255, .9);
+    }
+  }
+  .exist-comment-form{
+    background-color: rgba(255,255,255,0.8);
+    p{
+      padding: 50px;
+    }
+    a {
+      color: #000;
+      &:first-child {
+        right: 0.5rem;
+        transform: translateX(0) translateY(100%);
+      }
+      &:nth-child(2) {
+        right: 0.5rem;
+        transform: translateX(0) translateY(200%);
+      }
     }
   }
   .bottom-nav {
@@ -410,6 +450,8 @@ ul.rep-list{
     margin: 50px;
     position: relative;
     overflow: hidden;
+    background: url(../img/lin-mo.jpg) 50% 50% no-repeat;
+    background-size: cover;
     &:hover{
       .float-message{
         bottom: 0;
@@ -442,4 +484,13 @@ ul.rep-list{
       }
     }
   }
+}
+
+.rep-pic-float{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  opacity: 0;
 }
