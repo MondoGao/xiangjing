@@ -37,5 +37,9 @@ function linenodeReset(mouseY) {
         }
       });
     }
+  } else {
+    $lineNodeHover.find('a').each(function(index, el) {
+      $(this).css('transform', 'translateY(0)');
+    });
   }
 }
