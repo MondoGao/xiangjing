@@ -298,11 +298,12 @@ a:visited {
   .bottom-nav {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
     ul {
       list-style: none;
       font-size: 0;
+      text-align: center;
       li {
         display: inline-block;
         font-size: 3.5rem;
