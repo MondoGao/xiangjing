@@ -1,0 +1,13 @@
+@mixin screenFit($property,$value1,$value2,$value3) {
+  #{$property}: $value1;
+  @media (min-width: 992px) {
+    & {
+      #{$property}: $value2;
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      #{$property}: $value3;
+    }
+  }
+}
