@@ -3,11 +3,6 @@ var linenodeNum = $(".line-node").length;
 var timelineWidth = linenodeOuterWidth * linenodeNum;
 var $timeline = $(".time-line");
 $(document).ready(function() {
-  $(".line-node").mouseover(function(event) {
-    $(this).find('a').each(function(index, el) {
-      $(this).css('transform', 'translateY(0)');
-    });
-  });
   $(document).mousemove(function(e) {
     var docWidth = $(document).width(),
       mouseX = e.pageX;
@@ -26,8 +21,13 @@ function linenodeReset(mouseY) {
   var docHeight = $(document).height();
   var yPer = mouseY / docHeight;
   var $lineNodeHover = $(".line-node:hover");
+  var tPer = 1 - ($timeline.innerHeight() - timelineDtHeight) / docHeight;
+  if (yPer < tPer) {
+    $lineNodeHover.find('a').each(function(index, el) {
+      $(this).css('transform', 'translateY(0)');
+    });
+  }
   if ($lineNodeHover.outerHeight(true) > $timeline.innerHeight()) {
-    var tPer = 1 - ($timeline.innerHeight() - timelineDtHeight) / docHeight;
     if (yPer > tPer) {
       $lineNodeHover.find('a').each(function(index, el) {
         if (docHeight > 440) {
