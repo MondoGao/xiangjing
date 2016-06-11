@@ -69,10 +69,13 @@ a:visited {
       top: 50px;
       left: 50px;
       right: 50px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       line-height: 2;
       text-indent: 2rem;
       display: none;
+      p a{
+        margin-left: 2rem;
+      }
     }
   }
 }
@@ -138,7 +141,8 @@ a:visited {
     float: left;
     margin-left: 80px;
     color: $ftColorTimeLine;
-    width: 100px;
+    width: 120px;
+    white-space: nowrap;
     dt {
       position: relative;
       font-size: 20px;
@@ -168,7 +172,7 @@ a:visited {
         display: inline-block;
         color: $ftColorTimeLine;
         font-size: 18px;
-        transition: all 0.5s;
+        transition: text-indent .5s;
         text-indent: -1rem;
         &:hover {
           color: $ftColorTimeLineHover;
